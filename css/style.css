@@ -1,3 +1,7 @@
+body {
+    background-color: #a5361d;
+}
+
 /*HEADER CONTENIDO*/
 #container-header {
     position: relative;
@@ -22,4 +26,15 @@
 .img-carousel {
     width: 100%;
     height: 100%;
+}
+
+/*MAIN CONTENIDO */
+.container-main {
+    background-color: #dd771d;
+}
+.card-body {
+    background-color: #8e6335;
+}
+.container-reviews {
+    background-color: #721d15;
 }
