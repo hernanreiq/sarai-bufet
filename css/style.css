@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@500&family=Bree+Serif&family=Dancing+Script:wght@700&family=Fjalla+One&family=Indie+Flower&display=swap');
 body {
     background-color: #a5361d;
 }
@@ -15,6 +16,16 @@ body {
     width: 60%;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 3px;
+}
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 100px;
+}
+h2 {
+    font-family: 'Bree Serif', serif;
+}
+h2.eslogan {
+    font-family: 'Indie Flower', cursive;
 }
 #carouselSlidesOnly {
     height: 400px;
@@ -40,4 +51,25 @@ body {
 }
 .container-footer {
     background-color: rgb(19, 19, 19);
+}
+.btn {
+    text-transform: uppercase;
+    font-family: 'Bree Serif', serif;
+    letter-spacing: 1px;
+    color: #fff;
+}
+.btn-options {
+    background-color: #721d15;
+}
+.btn:hover {
+    color: rgb(255, 255, 255);
+    background-color: #a5361d;
+}
+.card-title {
+    font-family: 'Fjalla One', sans-serif;
+}
+.card-text {
+    font-family: 'Alegreya Sans', sans-serif;
+    letter-spacing: 1px;
+    text-align: justify;
 }
