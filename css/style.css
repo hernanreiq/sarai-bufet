@@ -33,8 +33,11 @@ body {
     background-color: #dd771d;
 }
 .card-body {
-    background-color: #8e6335;
+    background-color: #a2b3a3;
 }
 .container-reviews {
     background-color: #721d15;
+}
+.container-footer {
+    background-color: rgb(19, 19, 19);
 }
