@@ -73,3 +73,9 @@ h2.eslogan {
     letter-spacing: 1px;
     text-align: justify;
 }
+
+
+/*FOOTER CONTENIDO*/
+footer a {
+    letter-spacing: 1px;
+}
