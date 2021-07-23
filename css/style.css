@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@500&family=Bree+Serif&family=Dancing+Script:wght@700&family=Fjalla+One&family=Indie+Flower&display=swap');
-body {
-    background-color: #a5361d;
-}
 
 /*HEADER CONTENIDO*/
 #container-header {
@@ -13,7 +10,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60%;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 3px;
 }
@@ -28,15 +25,36 @@ h2.eslogan {
     font-family: 'Indie Flower', cursive;
 }
 #carouselSlidesOnly {
-    height: 400px;
+    height: 100%;
+    min-height: 250px;
 }
 .carousel-inner {
+    max-height: 500px;
+    min-height: 250px;
+    width: 100%;
+}
+.img-carousel {
+    min-height: 250px;
     width: 100%;
     height: 100%;
 }
-.img-carousel {
-    width: 100%;
-    height: 100%;
+@media only screen and (max-width: 780px){
+    h1 {
+        font-size: 80px;
+    }
+    h2.eslogan {
+        font-size: 25px;
+    }
+}
+@media only screen and (max-width: 500px){
+    h1 {
+        font-size: 60px;
+    }
+}
+@media only screen and (max-width: 500px){
+    h1 {
+        font-size: 45px;
+    }
 }
 
 /*MAIN CONTENIDO */
@@ -64,6 +82,9 @@ h2.eslogan {
 .btn:hover {
     color: rgb(255, 255, 255);
     background-color: #a5361d;
+}
+p.option {
+    color: #721d15;
 }
 .card-title {
     font-family: 'Fjalla One', sans-serif;

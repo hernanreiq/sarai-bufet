@@ -14,6 +14,8 @@
     },{
         "nombre": "Pollo horneado"
     },{
+        "nombre": "Cerdo horneado"
+    },{
         "nombre": "Cerdo guisado"
     },{
         "nombre": "Res guisado"
@@ -21,6 +23,14 @@
         "nombre": "Pollo en salsa blanca"
     },{
         "nombre": "Albondigas fritas"
+    },{
+        "nombre": "Pastelon de plátano maduro"
+    },{
+        "nombre": "Pastelon de harina de maíz"
+    },{
+        "nombre": "Lasaña de pollo"
+    },{
+        "nombre": "Lasaña de carne molida"
     },{
         "nombre": "Ensalada verde"
     },{

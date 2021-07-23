@@ -12,10 +12,12 @@
 </head>
 <body>
     <header>
-        <div class="container p-0" id="container-header">
-            <div id="texto-inicial" class="text-center text-white p-3">
-                <h1 class="p-0 m-0">Sarai Bufet</h1>
-                <h2 class="eslogan">Comida para cualquier tipo de celebración</h2>
+        <div class="container-fluid p-0" id="container-header">
+            <div class="container" id="texto-inicial">
+                <div class="text-center text-white p-3">
+                    <h1 class="p-0 m-0">Sarai Bufet</h1>
+                    <h2 class="eslogan">Comida para cualquier tipo de celebración</h2>
+                </div>
             </div>
             <div id="carouselSlidesOnly" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
@@ -39,79 +41,85 @@
         </div>
     </header>
     <main>
-        <div class="container container-main pb-4" id="contenedor-sugerencias">
-            <h2 class="text-center text-white pt-3">¿Qué tipo de celebración realizarás?</h2>
-            <p class="text-center mb-4 h5">Elige una opción y te voy a sugerir un menú</p>
-            <div class="row">
-                <div class="col-lg-4">
-                    <button class="btn btn-options w-100 py-3 h5">Cumpleaños</button>
+        <div class="container-fluid container-main">
+            <div class="container pb-4" id="contenedor-sugerencias">
+                <h2 class="text-center text-white pt-3">¿Qué tipo de celebración realizarás?</h2>
+                <p class="text-center mb-4 h5 option">Elige una opción y te voy a sugerir un menú</p>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <button class="btn btn-options w-100 py-3 h5">Cumpleaños</button>
+                    </div>
+                    <div class="col-lg-4">
+                        <button class="btn btn-options w-100 py-3 h5">Boda</button>
+                    </div>
+                    <div class="col-lg-4">
+                        <button class="btn btn-options w-100 py-3 h5">Despedida</button>
+                    </div>
                 </div>
-                <div class="col-lg-4">
-                    <button class="btn btn-options w-100 py-3 h5">Boda</button>
-                </div>
-                <div class="col-lg-4">
-                    <button class="btn btn-options w-100 py-3 h5">Despedida</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <button class="btn btn-options w-100 py-3 h5">Reunión familiar</button>
-                </div>
-                <div class="col-lg-4">
-                    <button class="btn btn-options w-100 py-3 h5">Ocio</button>
-                </div>
-                <div class="col-lg-4">
-                    <button class="btn btn-options w-100 py-3 h5">Ninguna de las anteriores</button>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <button class="btn btn-options w-100 py-3 h5">Reunión familiar</button>
+                    </div>
+                    <div class="col-lg-4">
+                        <button class="btn btn-options w-100 py-3 h5">Ocio</button>
+                    </div>
+                    <div class="col-lg-4">
+                        <button class="btn btn-options w-100 py-3 h5">Ninguna de las anteriores</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="container container-reviews pt-3 pb-5" id="contenedor-reviews">
-            <h2 class="text-center text-white pt-3">Comentarios de mis clientes</h2>
-            <div class="row">
-                <div class="col-lg-6 py-2">
-                    <div class="card w-100">
-                        <div class="card-body">
-                          <h5 class="card-title">Ruth</h5>
-                          <p class="card-text">Dijo una de las invitadas que quiere tu receta para las pechugas en salsa blanca.</p>
-                        </div>
-                      </div>
+        <div class="container-fluid container-reviews">
+            <div class="container pt-3 pb-5" id="contenedor-reviews">
+                <h2 class="text-center text-white pt-3">Comentarios de mis clientes</h2>
+                <div class="row">
+                    <div class="col-lg-6 py-2">
+                        <div class="card w-100">
+                            <div class="card-body">
+                              <h5 class="card-title">Ruth</h5>
+                              <p class="card-text">Dijo una de las invitadas que quiere tu receta para las pechugas en salsa blanca.</p>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-lg-6 py-2">
+                        <div class="card w-100">
+                            <div class="card-body">
+                              <h5 class="card-title">Maris</h5>
+                              <p class="card-text">Todo salió excelente en la boda, a todos les gustó la comida y rindió muchísimo.</p>
+                            </div>
+                          </div>
+                    </div>
                 </div>
-                <div class="col-lg-6 py-2">
-                    <div class="card w-100">
-                        <div class="card-body">
-                          <h5 class="card-title">Maris</h5>
-                          <p class="card-text">Todo salió excelente en la boda, a todos les gustó la comida y rindió muchísimo.</p>
-                        </div>
-                      </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 py-2">
-                    <div class="card w-100">
-                        <div class="card-body">
-                          <h5 class="card-title">Orlando</h5>
-                          <p class="card-text">Sarai, usted cocina buenísimo, sus hijos deben estar contentos por tu sazón!</p>
-                        </div>
-                      </div>
-                </div>
-                <div class="col-lg-6 py-2">
-                    <div class="card w-100">
-                        <div class="card-body">
-                          <h5 class="card-title">Reynaldo</h5>
-                          <p class="card-text">Desde que dicen que Sarai es la que va a cocinar, todos quieren ir a la actividad.</p>
-                        </div>
-                      </div>
+                <div class="row">
+                    <div class="col-lg-6 py-2">
+                        <div class="card w-100">
+                            <div class="card-body">
+                              <h5 class="card-title">Orlando</h5>
+                              <p class="card-text">Sarai, usted cocina buenísimo, sus hijos deben estar contentos por tu sazón!</p>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-lg-6 py-2">
+                        <div class="card w-100">
+                            <div class="card-body">
+                              <h5 class="card-title">Reynaldo</h5>
+                              <p class="card-text">Desde que dicen que Sarai es la que va a cocinar, todos quieren ir a la actividad.</p>
+                            </div>
+                          </div>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
     <footer>
-        <div class="container container-footer py-3">
-            <p class="text-center m-0 p-0 text-white">
-                Sarai Bufet, cocinando bien sabroso desde el año 2015. 
-                <br>Todos los derechos reservados &copy;.
-                <br>Desarrollo y Diseño Web por: <span class="badge badge-dark"><a href="https://bit.ly/hernanreiq" target="_blank" class="text-decoration-none text-warning">Hernan.Reiq</a></span>
-            </p>
+        <div class="container-fluid container-footer">
+            <div class="container py-3">
+                <p class="text-center m-0 p-0 text-white">
+                    Sarai Bufet, cocinando bien sabroso desde el año 2015. 
+                    <br>Todos los derechos reservados &copy;.
+                    <br>Desarrollo y Diseño Web por: <span class="badge badge-dark"><a href="https://bit.ly/hernanreiq" target="_blank" class="text-decoration-none text-warning">Hernan.Reiq</a></span>
+                </p>
+            </div>
         </div>
     </footer>
     <!--BOOTSTRAP 4-->
