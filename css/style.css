@@ -76,17 +76,24 @@ h2.eslogan {
     letter-spacing: 1px;
     color: #fff;
 }
-.btn-options {
+.btn-option {
     background-color: #721d15;
+    font-size: 22px;
 }
 .btn:hover {
     color: rgb(255, 255, 255);
     background-color: #a5361d;
 }
-p.option {
-    color: #721d15;
+.informacion {
+    letter-spacing: 1px;
+    line-height: 40px;
+    background-color: #a5361d;;
 }
-.card-title {
+.informacion-badge {
+    background-color: #721d15;
+    color: white;
+}
+.card-title, .informacion {
     font-family: 'Fjalla One', sans-serif;
 }
 .card-text {
