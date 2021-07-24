@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--BOOTSTRAP 4-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <!-- FONT-AWESOME -->
-    <script src="https://kit.fontawesome.com/2acc1475d8.js" crossorigin="anonymous"></script>
     <!--CSS-->
     <link rel="stylesheet" href="css/style.css">
     <title>Sarai Bufet | Comida para cualquier tipo de celebración</title>
@@ -44,12 +42,12 @@
     </header>
     <main>
         <div class="container-fluid container-main">
-            <div class="container pb-4" id="contenedor-sugerencias">
+            <div class="container pb-5" id="contenedor-sugerencias">
                 <h2 class="text-center h1 text-white py-4">Nosotros nos adaptamos a ti</h2>
                 <div class="row">
                     <div class="col-lg-12 py-2">
-                        <p class="informacion text-white h5 text-justify p-4 rounded mb-0">
-                            Sabemos que podemos complacerte con lo que necesites. Tenemos experiencia haciendo bufet para bodas, cumpleaños, despedidas, reuniones familiares y de trabajo.
+                        <p class="shadow informacion text-white h5 text-justify p-4 rounded mb-0">
+                            Sabemos que podemos complacerte con lo que necesites. Tenemos experiencia haciendo bufé para bodas, cumpleaños, despedidas, reuniones familiares y de trabajo.
                             <br><br>
                             <span class="h3 text-center">Tú decides lo que comerán tus invitados.</span>
                         </p>
@@ -57,7 +55,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12 py-2">
-                        <button class="btn btn-option w-100 h-100 py-3">CREA TU PROPIO MENÚ</button>
+                        <button class="shadow btn btn-option w-100 h-100 py-3" data-toggle="modal" data-target="#Modal">CREA TU PROPIO MENÚ</button>
                     </div>    
                 </div>
             </div>
@@ -67,7 +65,7 @@
                 <h2 class="text-center text-white py-4">Comentarios de nuestros clientes</h2>
                 <div class="row">
                     <div class="col-lg-6 py-2">
-                        <div class="card w-100">
+                        <div class="card w-100 shadow">
                             <div class="card-body">
                               <h5 class="card-title">Ruth</h5>
                               <p class="card-text">Dijo una de las invitadas que quiere tu receta para las pechugas en salsa blanca.</p>
@@ -75,7 +73,7 @@
                           </div>
                     </div>
                     <div class="col-lg-6 py-2">
-                        <div class="card w-100">
+                        <div class="card w-100 shadow">
                             <div class="card-body">
                               <h5 class="card-title">Maris</h5>
                               <p class="card-text">Todo salió excelente en la boda, a todos les gustó la comida y rindió muchísimo.</p>
@@ -85,7 +83,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-6 py-2">
-                        <div class="card w-100">
+                        <div class="card w-100 shadow">
                             <div class="card-body">
                               <h5 class="card-title">Orlando</h5>
                               <p class="card-text">Sarai, usted cocina buenísimo, sus hijos deben estar contentos por tu sazón!</p>
@@ -93,7 +91,7 @@
                           </div>
                     </div>
                     <div class="col-lg-6 py-2">
-                        <div class="card w-100">
+                        <div class="card w-100 shadow">
                             <div class="card-body">
                               <h5 class="card-title">Reynaldo</h5>
                               <p class="card-text">Desde que dicen que Sarai es la que va a cocinar, todos quieren ir a la actividad.</p>
@@ -115,6 +113,40 @@
             </div>
         </div>
     </footer>
+    <!--VENTANA EMERGENTE PARA CREAR EL MENÚ-->
+    <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header text-white">
+                <h5 class="modal-title" id="ModalLabel">Creando tu menú ideal</h5>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!--CONTENIDO DE LA VENTANA EMERGENTE-->
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Confirmation-Modal" data-dismiss="modal">Crear menú</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!--VENTANA EMERGENTE PARA CONFIRMAR LA COMPRA-->
+    <div class="modal fade" id="Confirmation-Modal" tabindex="-1" aria-labelledby="ModalLabelConfirmation" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header text-white">
+                <h5 class="modal-title" id="ModalLabelConfirmation">Confirmación del pedido</h5>
+            </div>
+            <div class="modal-body" id="modal-body-confirmation">
+                <!--CONTENIDO DE LA VENTANA EMERGENTE-->
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-success">Enviar pedido</button>
+            </div>
+        </div>
+        </div>
+    </div>
     <!--BOOTSTRAP 4-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>

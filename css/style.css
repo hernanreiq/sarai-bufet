@@ -80,7 +80,10 @@ h2.eslogan {
     background-color: #721d15;
     font-size: 22px;
 }
-.btn:hover {
+.modal-footer, .modal-header {
+    background-color: #721d15;
+}
+.btn-option:hover {
     color: rgb(255, 255, 255);
     background-color: #a5361d;
 }
