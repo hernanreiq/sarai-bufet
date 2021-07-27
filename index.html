@@ -126,20 +126,25 @@
                 <!--CONTENIDO DE LA VENTANA EMERGENTE-->
                 <h4 class="text-center">¿Cuántas personas comerán en la actividad?</h4>
                 <input type="number" id="cantidad-personas" class="w-100 px-2 text-center font-weight-bold my-3">
-                <h4 class="text-center">Elige todas las opciones necesarias</h4>
-                <div id="contenedor-inputs">
-                    <!--LOS INPUTS PARA LAS OPCIONES SE CREAN CON JAVASCRIPT-->
-                </div>
-                <div class="mt-3 mb-5 text-center">
-                    <i class="fas fa-plus-circle h1 text-success" id="mas-bandejas"></i>
-                    <p class="font-weight-bold">Presiona <i class="fas fa-plus-circle text-success"></i> para agregar más opciones</p>
+                <!--CONTENEDOR DE CHECKBOXES-->
+                <div class="mb-2">
+                    <table class="table table-bordered p-0 table-hover">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th><h4 class="text-center mb-0">Elige lo que comerán tus invitados</h4></th>
+                          </tr>
+                        </thead>
+                        <tbody id="contenedor-checkboxes">
+                            <!--LOS CHECKBOXES PARA LAS OPCIONES SE CREAN CON JAVASCRIPT-->
+                        </tbody>
+                    </table>
                 </div>
                 <label for="fecha" class="font-weight-bold">Fecha y hora de la actividad:</label>
                 <input type="datetime-local" id="fecha" class="font-weight-bold" name="trip-start">
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Confirmation-Modal" data-dismiss="modal">Crear menú</button>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Confirmation-Modal" data-dismiss="modal" id="crear-menu">Crear menú</button>
             </div>
         </div>
         </div>

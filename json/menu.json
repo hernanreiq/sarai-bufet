@@ -1,5 +1,7 @@
  [
     {
+        "nombre": "Arroz blanco"
+    },{
         "nombre": "Moro de guandules"
     },{
         "nombre": "Arroz con maíz"
@@ -16,23 +18,33 @@
     },{
         "nombre": "Pollo horneado"
     },{
+        "nombre": "Pollo guisado"
+    },{
+        "nombre": "Pollo en salsa blanca"
+    },{
         "nombre": "Cerdo horneado"
     },{
         "nombre": "Cerdo guisado"
     },{
-        "nombre": "Res guisado"
+        "nombre": "Res guisado"        
     },{
-        "nombre": "Pollo en salsa blanca"
+        "nombre": "Albondigas de carne molida"
     },{
-        "nombre": "Albondigas fritas"
+        "nombre": "Pastelon de plátano maduro con carne molida"
     },{
-        "nombre": "Pastelon de plátano maduro"
-    },{
-        "nombre": "Pastelon de harina de maíz"
+        "nombre": "Pastelon de harina de maíz con carne molida"
     },{
         "nombre": "Lasaña de pollo"
     },{
         "nombre": "Lasaña de carne molida"
+    },{
+        "nombre": "Espaguetis en salsa roja y queso"
+    },{
+        "nombre": "Espaguetis en salsa blanca y queso"
+    },{
+        "nombre": "Canelones de carne molida"
+    },{
+        "nombre": "Canelones de pollo"
     },{
         "nombre": "Ensalada verde"
     },{
