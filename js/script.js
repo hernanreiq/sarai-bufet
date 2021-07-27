@@ -32,8 +32,25 @@ function crearCheckboxes(menu, cantidad_bandejas){
     for(var i = 0; i < cantidad_bandejas; i++){
         contenedor_checkboxes.innerHTML += `
         <tr>
-            <td><label class="font-weight-bold mb-0"><input type="checkbox" value="${i}" id="menu-checkbox-${i}"> ${menu[i].nombre}</label><br></td>
+            <td><label class="font-weight-bold mb-0"><input type="checkbox" value="${i}" onchange="agregarAlMenu(${i})"> ${menu[i].nombre}</label><br></td>
         </tr>
         `;
+    }
+}
+
+/*
+    ESTE BLOQUE DE CODIGO PERMITE AGREGAR LA COMIDA AL MENU 
+    Y SI YA EL USUARIO LA TIENE AGREGADA EN EL MENU ENTONCES LA ELIMINA 
+*/
+var menu_personalizado = [];
+
+function agregarAlMenu(id_bandeja){
+    if (menu_personalizado.includes(id_bandeja)){ // SI LA OPCION YA ESTÁ EN EL MENU, ENTONCES SE ELIMINA
+        var index = menu_personalizado.indexOf(id_bandeja);
+        if(index > -1){
+            menu_personalizado.splice(index, 1);
+        }
+    } else { // SI LA OPCIÓN NO ESTÁ EN EL MENU, ENTONCES SE AGREGA
+        menu_personalizado.push(id_bandeja);
     }
 }
