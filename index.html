@@ -162,25 +162,39 @@
                     <!--CONTENIDO DE LA VENTANA EMERGENTE-->
                     <h4 class="text-center">Cotización del menú para <span id="cantidad-personas-cotizacion"></span></h4>
                     <h3 class="text-center"><span class="badge badge-success" id="badge-monto-pagar"></span></h3>
+                    <p class="font-weight-bold text-center text-success">Envío incluido</p>
+                    <div><!--INFORMACION SOBRE LOS PAGOS-->
+                        <p class="h5 text-justify">Se debe pagar al menos la mitad por adelantado.</p>
+                        <p class="font-weight-bold mt-3 mb-0">
+                            <span class="h5">Métodos de pago disponibles:</span>
+                            <ul class="font-weight-bold">
+                                <li>Pago en efectivo.</li>
+                                <li>Transferencia al Banco Popular Dominicano.</li>
+                                <li>Transferencia al Banreservas.</li>
+                            </ul>
+                            <p class="h5 mb-3 text-justify">Usted deberá compartir la ubicación de entrega por WhatsApp.</p>
+                        </p>
+                    </div>
                     <table class="table table-bordered p-0 table-hover mt-3">
                         <thead class="thead-dark">
-                          <tr>
-                            <th><h4 class="text-center mb-0">Estas son las opciones seleccionadas</h4></th>
-                          </tr>
+                            <tr>
+                                <th><h4 class="text-center mb-0">Estas son las opciones seleccionadas</h4></th>
+                            </tr>
                         </thead>
                         <tbody id="contenedor-checkboxes-seleccionados">
                             <!--LOS CHECKBOXES PARA LAS OPCIONES SE CREAN CON JAVASCRIPT-->
                         </tbody>
                     </table>
-                    <h4 class="text-center" id="fecha-cotizacion"></h4>
+                    <h3 class="text-center"><span class="badge badge-info" id="fecha-cotizacion"></span></h3>
+                    <p class="h5 mb-3 text-justify">Se verificará si ese día y hora está disponible.</p>
                 </div>
                 <div id="contenedor-alertas">
-                    <h3 class="text-center text-info" id="texto-alerta"></h3>
+                    <h3 class="text-center" id="texto-alerta"></h3>
                 </div>
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-success">Enviar</button>
+            <button type="button" class="btn btn-success" id="enviar-cotizacion">Enviar</button>
             </div>
         </div>
         </div>

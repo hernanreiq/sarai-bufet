@@ -8,6 +8,7 @@ var contenedor_checkboxes_seleccionados = document.getElementById('contenedor-ch
 var contenedor_cotizacion = document.getElementById('contenedor-cotizacion');
 var contenedor_alertas = document.getElementById('contenedor-alertas');
 var texto_alerta = document.getElementById('texto-alerta');
+var enviar_cotizacion = document.getElementById('enviar-cotizacion');
 var menu;
 var menu_personalizado = [];
 
@@ -22,6 +23,7 @@ function ObtenerMenuJSON(){
     }).then (res => {
         menu = res.data;
         crearCheckboxes(res.data, res.data.length);
+        comprobarSeleccion();
     }).catch(err => {
         console.log('Hay un error con el menu.json\n', err);
     });
@@ -57,6 +59,16 @@ function agregarAlMenu(id_bandeja){
     } else { // SI LA OPCIÓN NO ESTÁ EN EL MENU, ENTONCES SE AGREGA
         menu_personalizado.push(id_bandeja);
     }
+    comprobarSeleccion();
+}
+
+//COMPROBAR QUE EL USUARIO TENGA ALGO SELECCIONADO
+function comprobarSeleccion(){
+    if(menu_personalizado.length < 3 || cantidad_personas.value < 25){
+        crear_menu.style.display = "none";
+    } else {
+        crear_menu.style.display = "block";
+    }
 }
 
 /*
@@ -64,13 +76,15 @@ function agregarAlMenu(id_bandeja){
 */
 
 function obtenerValores(){
-    if(cantidad_personas.value >= 25 && fecha_hora.value != '' && menu_personalizado.length > 0){
+    if(cantidad_personas.value >= 25 && fecha_hora.value != '' && menu_personalizado.length >= 3){
         /* OCULTAMOS LAS ALERTAS Y HACEMOS VISIBLE EL RESUMEN DE LA COTIZACION */
+        enviar_cotizacion.style.display = 'block';
         contenedor_cotizacion.style.display = 'block';
         contenedor_alertas.style.display = "none";
         /* CALCULAMOS LO QUE SE VA A PAGAR POR EL MENU */
         var cantidad_opciones = menu_personalizado.length;
-        var monto_pagar =  ((cantidad_opciones * 25) + 25) * Math.ceil(Math.abs(cantidad_personas.value)) + 500 + 1000;
+        var precio_pieza = 25 + cantidad_opciones;
+        var monto_pagar =  ((cantidad_opciones * precio_pieza) + 30) * Math.ceil(Math.abs(cantidad_personas.value)) + 500 + 1000;
         /* INSERTAMOS LOS RESULTADOS EN LA VENTANA EMERGENTE */
         cantidad_personas_cotizacion.innerText = Math.ceil(Math.abs(cantidad_personas.value)) + ' personas';
         badge_monto_pagar.innerText = 'RD$ ' + monto_pagar.toLocaleString('en-US');
@@ -78,12 +92,16 @@ function obtenerValores(){
         imprimirOpcionesSeleccionadas();
     } else if(cantidad_personas.value <= 24){
         alertas('No cocinamos para menos de 25 personas, aumente la cantidad de invitados');
-    } else if(menu_personalizado.length <= 0){
-        alertas('Debe elegir al menos 1 opción para cocinar');
+    } else if(menu_personalizado.length <= 2){
+        alertas('Debes elegir al menos 3 opciones para cocinar');
     } else if(fecha_hora.value == ''){
-        alertas('Debe elegir la fecha y hora de la entrega de la comida');
+        alertas('Debes elegir la fecha y hora de la entrega de la comida');
     } else {
         alertas('No ha seleccionado nada...');
+    }
+    //OCULTANDO EL BOTÓN DE ENVIAR
+    if(cantidad_personas.value <= 24 || menu_personalizado.length <= 2 || fecha_hora.value == ''){
+        enviar_cotizacion.style.display = 'none';
     }
 } 
 
@@ -99,7 +117,7 @@ function imprimirOpcionesSeleccionadas(){
     for(var i = 0; i < cantidad_opciones; i++){
         contenedor_checkboxes_seleccionados.innerHTML += `
         <tr>
-            <td>${menu[menu_personalizado[i]].nombre}</td>
+            <td><span class="font-weight-bold">${menu[menu_personalizado[i]].nombre}</span></td>
         </tr>
         `;
     }

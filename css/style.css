@@ -118,3 +118,6 @@ label input {
 td i {
     cursor: pointer;
 }
+#texto-alerta {
+    color: #a5361d;
+}
