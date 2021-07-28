@@ -12,6 +12,8 @@
     },{
         "nombre": "Papa"
     },{
+        "nombre": "Mangú de plátanos"
+    },{
         "nombre": "Yuca"
     },{
         "nombre": "Batata"
@@ -30,9 +32,9 @@
     },{
         "nombre": "Albondigas de carne molida"
     },{
-        "nombre": "Pastelon de plátano maduro con carne molida"
+        "nombre": "Pastelón de plátano maduro con carne molida"
     },{
-        "nombre": "Pastelon de harina de maíz con carne molida"
+        "nombre": "Pastelón de harina de maíz con carne molida"
     },{
         "nombre": "Lasaña de pollo"
     },{
@@ -43,8 +45,6 @@
         "nombre": "Espaguetis en salsa blanca y queso"
     },{
         "nombre": "Canelones de carne molida"
-    },{
-        "nombre": "Canelones de pollo"
     },{
         "nombre": "Ensalada verde"
     },{

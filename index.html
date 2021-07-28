@@ -108,7 +108,7 @@
         <div class="container-fluid container-footer">
             <div class="container py-3">
                 <p class="text-center m-0 p-0 text-white">
-                    Sarai Bufet, cocinando bien sabroso desde el año 2015. 
+                    Sarai Bufet, cocinando bien sabroso desde el año 2017. 
                     <br>Todos los derechos reservados &copy;.
                     <br>Desarrollo y Diseño Web por: <span class="badge badge-dark"><a href="https://bit.ly/hernanreiq" target="_blank" class="text-decoration-none text-warning">Hernan.Reiq</a></span>
                 </p>
@@ -122,10 +122,11 @@
             <div class="modal-header text-white">
                 <h5 class="modal-title" id="ModalLabel">Creando tu menú ideal</h5>
             </div>
-            <div class="modal-body" id="modal-body">
+            <div class="modal-body">
                 <!--CONTENIDO DE LA VENTANA EMERGENTE-->
                 <h4 class="text-center">¿Cuántas personas comerán en la actividad?</h4>
-                <input type="number" id="cantidad-personas" class="w-100 px-2 text-center font-weight-bold my-3">
+                <p class="text-danger font-weight-bold text-center mb-0">Sólo cocinamos para 25 personas en adelante</p>
+                <input type="number" id="cantidad-personas" class="w-100 px-2 text-center font-weight-bold my-3" value="25">
                 <!--CONTENEDOR DE CHECKBOXES-->
                 <div class="mb-2">
                     <table class="table table-bordered p-0 table-hover">
@@ -140,7 +141,7 @@
                     </table>
                 </div>
                 <label for="fecha" class="font-weight-bold">Fecha y hora de la actividad:</label>
-                <input type="datetime-local" id="fecha" class="font-weight-bold" name="trip-start">
+                <input type="datetime-local" id="fecha-hora" class="font-weight-bold" name="trip-start">
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -156,8 +157,26 @@
             <div class="modal-header text-white">
                 <h5 class="modal-title" id="ModalLabelConfirmation">Confirmación del pedido</h5>
             </div>
-            <div class="modal-body" id="modal-body-confirmation">
-                <!--CONTENIDO DE LA VENTANA EMERGENTE-->
+            <div class="modal-body">
+                <div id="contenedor-cotizacion">
+                    <!--CONTENIDO DE LA VENTANA EMERGENTE-->
+                    <h4 class="text-center">Cotización del menú para <span id="cantidad-personas-cotizacion"></span></h4>
+                    <h3 class="text-center"><span class="badge badge-success" id="badge-monto-pagar"></span></h3>
+                    <table class="table table-bordered p-0 table-hover mt-3">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th><h4 class="text-center mb-0">Estas son las opciones seleccionadas</h4></th>
+                          </tr>
+                        </thead>
+                        <tbody id="contenedor-checkboxes-seleccionados">
+                            <!--LOS CHECKBOXES PARA LAS OPCIONES SE CREAN CON JAVASCRIPT-->
+                        </tbody>
+                    </table>
+                    <h4 class="text-center" id="fecha-cotizacion"></h4>
+                </div>
+                <div id="contenedor-alertas">
+                    <h3 class="text-center text-info" id="texto-alerta"></h3>
+                </div>
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

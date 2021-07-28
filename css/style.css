@@ -110,3 +110,11 @@ h2.eslogan {
 footer a {
     letter-spacing: 1px;
 }
+
+/*VENTANA EMERGENTE*/
+label input {
+    cursor: pointer;
+}
+td i {
+    cursor: pointer;
+}
