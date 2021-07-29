@@ -11,6 +11,7 @@ var texto_alerta = document.getElementById('texto-alerta');
 var enviar_cotizacion = document.getElementById('enviar-cotizacion');
 var menu;
 var menu_personalizado = [];
+var monto_pagar;
 
 /* 
     OBTENIENDO EL MENU QUE ESTA EN EL JSON 
@@ -84,7 +85,7 @@ function obtenerValores(){
         /* CALCULAMOS LO QUE SE VA A PAGAR POR EL MENU */
         var cantidad_opciones = menu_personalizado.length;
         var precio_pieza = 25 + cantidad_opciones;
-        var monto_pagar =  ((cantidad_opciones * precio_pieza) + 30) * Math.ceil(Math.abs(cantidad_personas.value)) + 500 + 1000;
+        monto_pagar =  ((cantidad_opciones * precio_pieza) + 30) * Math.ceil(Math.abs(cantidad_personas.value)) + 500 + 1000;
         /* INSERTAMOS LOS RESULTADOS EN LA VENTANA EMERGENTE */
         cantidad_personas_cotizacion.innerText = Math.ceil(Math.abs(cantidad_personas.value)) + ' personas';
         badge_monto_pagar.innerText = 'RD$ ' + monto_pagar.toLocaleString('en-US');
@@ -131,4 +132,25 @@ function alertas(contenido_texto){
     contenedor_cotizacion.style.display = 'none';
     contenedor_alertas.style.display = "block";
     texto_alerta.innerText = contenido_texto;
+}
+
+/*
+    ENVIAR EL PEDIDO POR WHATSAPP
+*/
+enviar_cotizacion.addEventListener('click', enviarPorWhatsApp);
+
+function enviarPorWhatsApp(){
+    var texto_generico = 'Me interesa realizar una actividad para '+ Math.ceil(Math.abs(cantidad_personas.value)) +' personas en la fecha y hora *'+(fecha_hora.value).replace('T', ' ')+'* con el siguiente menú:%0A';
+    var url_base = 'https://wa.me/18297753369?text=*_Sarai Bufet_*%0A' + texto_generico;
+    for(var i = 0; i < menu_personalizado.length; i++){
+        if((i + 1) == menu_personalizado.length){
+            url_base += 'y ' + menu[menu_personalizado[i]].nombre;
+        } else if((i + 2) == menu_personalizado.length){
+            url_base += menu[menu_personalizado[i]].nombre + ' ';
+        } else{
+            url_base += menu[menu_personalizado[i]].nombre + ', ';
+        }
+    }
+    var url_completo = url_base + '.%0ALa cotización hizo *RD$ '+ monto_pagar.toLocaleString('en-US') +'.*%0A¿Está disponible para ese día?*';
+    window.open(url_completo); 
 }
