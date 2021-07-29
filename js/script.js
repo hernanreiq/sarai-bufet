@@ -141,7 +141,7 @@ enviar_cotizacion.addEventListener('click', enviarPorWhatsApp);
 
 function enviarPorWhatsApp(){
     var texto_generico = 'Me interesa realizar una actividad para '+ Math.ceil(Math.abs(cantidad_personas.value)) +' personas en la fecha y hora *'+(fecha_hora.value).replace('T', ' ')+'* con el siguiente menú:%0A';
-    var url_base = 'https://wa.me/18297753369?text=*_Sarai Bufet_*%0A' + texto_generico;
+    var url_base = 'https://wa.me/18096106161?text=*_Sarai Bufet_*%0A' + texto_generico;
     for(var i = 0; i < menu_personalizado.length; i++){
         if((i + 1) == menu_personalizado.length){
             url_base += 'y ' + menu[menu_personalizado[i]].nombre;
