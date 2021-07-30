@@ -4,9 +4,17 @@
     },{
         "nombre": "Moro de gandules"
     },{
+        "nombre": "Moro de habichuelas rojas"
+    },{
+        "nombre": "Moro de habichuelas negras"
+    },{
         "nombre": "Arroz con maíz"
     },{
         "nombre": "Arroz con fideos"
+    },{
+        "nombre": "Locrio de carne de pollo"
+    },{
+        "nombre": "Locrio de carne de cerdo"
     },{
         "nombre": "Guineitos"
     },{
@@ -18,17 +26,17 @@
     },{
         "nombre": "Batata"
     },{
-        "nombre": "Pollo horneado"
+        "nombre": "Carne de pollo horneado"
     },{
-        "nombre": "Pollo guisado"
+        "nombre": "Carne de pollo guisado"
     },{
-        "nombre": "Pollo en salsa blanca"
+        "nombre": "Carne de pollo en salsa blanca"
     },{
-        "nombre": "Cerdo horneado"
+        "nombre": "Carne de cerdo horneado"
     },{
-        "nombre": "Cerdo guisado"
+        "nombre": "Carne de cerdo guisado"
     },{
-        "nombre": "Res guisado"        
+        "nombre": "Carne de res guisado"        
     },{
         "nombre": "Albondigas de carne molida"
     },{
@@ -36,7 +44,7 @@
     },{
         "nombre": "Pastelón de harina de maíz con carne molida"
     },{
-        "nombre": "Lasaña de pollo"
+        "nombre": "Lasaña de carne de pollo"
     },{
         "nombre": "Lasaña de carne molida"
     },{

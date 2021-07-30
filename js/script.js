@@ -3,6 +3,7 @@ var crear_menu = document.getElementById('crear-menu');
 var cantidad_personas_cotizacion = document.getElementById('cantidad-personas-cotizacion');
 var badge_monto_pagar = document.getElementById('badge-monto-pagar');
 var fecha_hora = document.getElementById('fecha-hora');
+var nombre_cliente = document.getElementById('nombre-cliente');
 var fecha_cotizacion = document.getElementById('fecha-cotizacion');
 var contenedor_checkboxes_seleccionados = document.getElementById('contenedor-checkboxes-seleccionados');
 var contenedor_cotizacion = document.getElementById('contenedor-cotizacion');
@@ -77,15 +78,23 @@ function comprobarSeleccion(){
 */
 
 function obtenerValores(){
-    if(cantidad_personas.value >= 25 && fecha_hora.value != '' && menu_personalizado.length >= 3){
+    if(cantidad_personas.value >= 25 && fecha_hora.value != '' && menu_personalizado.length >= 3 && nombre_cliente.value != ''){
         /* OCULTAMOS LAS ALERTAS Y HACEMOS VISIBLE EL RESUMEN DE LA COTIZACION */
         enviar_cotizacion.style.display = 'block';
         contenedor_cotizacion.style.display = 'block';
         contenedor_alertas.style.display = "none";
         /* CALCULAMOS LO QUE SE VA A PAGAR POR EL MENU */
         var cantidad_opciones = menu_personalizado.length;
-        var precio_pieza = 25 + cantidad_opciones;
-        monto_pagar =  ((cantidad_opciones * precio_pieza) + 30) * Math.ceil(Math.abs(cantidad_personas.value)) + 500 + 1000;
+        var precio_pieza = 0;
+        for(var i = 0; i < cantidad_opciones; i++){
+            if(menu[menu_personalizado[i]].nombre.search('carne') != -1 || 
+            menu[menu_personalizado[i]].nombre.search('Carne') != -1){
+                precio_pieza += 45;
+            } else {
+                precio_pieza += 30;
+            }
+        }
+        monto_pagar =  (precio_pieza + 20) * Math.ceil(Math.abs(cantidad_personas.value)) + 500 + 1000;
         /* INSERTAMOS LOS RESULTADOS EN LA VENTANA EMERGENTE */
         cantidad_personas_cotizacion.innerText = Math.ceil(Math.abs(cantidad_personas.value)) + ' personas';
         badge_monto_pagar.innerText = 'RD$ ' + monto_pagar.toLocaleString('en-US');
@@ -97,11 +106,13 @@ function obtenerValores(){
         alertas('Debes elegir al menos 3 opciones para cocinar');
     } else if(fecha_hora.value == ''){
         alertas('Debes elegir la fecha y hora de la entrega de la comida');
+    } else if(nombre_cliente.value == ''){
+        alertas('Debes escribir tu nombre');
     } else {
-        alertas('No ha seleccionado nada...');
+        alertas('Algo anda mal, recarga la página o regresa más tarde...')
     }
     //OCULTANDO EL BOTÓN DE ENVIAR
-    if(cantidad_personas.value <= 24 || menu_personalizado.length <= 2 || fecha_hora.value == ''){
+    if(cantidad_personas.value <= 24 || menu_personalizado.length <= 2 || fecha_hora.value == '' || nombre_cliente.value == ''){
         enviar_cotizacion.style.display = 'none';
     }
 } 
@@ -140,7 +151,7 @@ function alertas(contenido_texto){
 enviar_cotizacion.addEventListener('click', enviarPorWhatsApp);
 
 function enviarPorWhatsApp(){
-    var texto_generico = 'Me interesa realizar una actividad para '+ Math.ceil(Math.abs(cantidad_personas.value)) +' personas en la fecha y hora *'+(fecha_hora.value).replace('T', ' ')+'* con el siguiente menú:%0A';
+    var texto_generico = 'Mi nombre es *'+nombre_cliente.value+'* y me interesa realizar una actividad para '+ Math.ceil(Math.abs(cantidad_personas.value)) +' personas en la fecha y hora *'+(fecha_hora.value).replace('T', ' ')+'* con el siguiente menú:%0A';
     var url_base = 'https://wa.me/18096106161?text=*_Sarai Bufet_*%0A' + texto_generico;
     for(var i = 0; i < menu_personalizado.length; i++){
         if((i + 1) == menu_personalizado.length){
@@ -151,6 +162,6 @@ function enviarPorWhatsApp(){
             url_base += menu[menu_personalizado[i]].nombre + ', ';
         }
     }
-    var url_completo = url_base + '.%0ALa cotización hizo *RD$ '+ monto_pagar.toLocaleString('en-US') +'.*%0A¿Está disponible para ese día?*';
+    var url_completo = url_base + '.%0ALa cotización hizo *RD$ '+ monto_pagar.toLocaleString('en-US') +'.*%0A*¿Está disponible para ese día?*';
     window.open(url_completo); 
 }
